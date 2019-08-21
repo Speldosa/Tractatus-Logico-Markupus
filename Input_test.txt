@@ -1,0 +1,13 @@
+@ This line should be removed.
+This line shouldn't be removed. @
+
+This line should be kept, and it should have a blank line above itself.
+@ This line should be removed.
+This sentence should not be the first sentence of this line, and there should be a single space between it and the punctuation that comes before it.
+
+This line should be kept, and it should have a blank line above itself.
+This sentence should not be the first sentence of this line, and there should be a single space between it and the punctuation that comes before it.
+
+@ This line should be removed.
+	@ This line should be removed.
+	This line should be kept, have a blank line above itself, and not be intended.
