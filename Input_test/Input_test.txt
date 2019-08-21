@@ -8,6 +8,7 @@ This sentence should not be the first sentence of this line, and there should be
 This line should be kept, and it should have a blank line above itself.
 This sentence should not be the first sentence of this line, and there should be a single space between it and the punctuation that comes before it.
 
+
 @ This line should be removed.
 	@ This line should be removed.
-	This line should be kept, have a blank line above itself, and not be intended.
+	This line should be kept, have two blank lines above itself, and not be intended.
