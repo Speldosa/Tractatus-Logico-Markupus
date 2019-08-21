@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
 import sys
-import os
 import os.path
-import re
 
 def printHelpMessage(error):
 	print("\nError: " + error + "\n\nUsage: python Tractatus [name of original file] [name of output file]\n\nSee the readme file for further instructions.\n")
@@ -35,15 +33,30 @@ outputContent = []
 # Go through each line in the list.
 for a, line in enumerate(content):
 	commandFound = False
-	# Remove tabs.
-	line = line.replace('\t', '')
-	# Go through each command in the command list.
+	# Remove leading and trailing whitespace the line might have.
+	line = line.strip()
+	# Put back the new line command at the end of the line.
+	line = line + "\n"
+	# Go through each command in the commands list until a match for the first character of the line is found.
 	for command in listOfCommands:
 		if command in line[0]:
 			commandFound = True
 			break
+	# If the line is to be kept...
 	if not commandFound:
+		if len(outputContent) != 0:
+			last_saved_line = outputContent[len(outputContent)-1]
+			# If the current line or the last saved line isn't just a new line, remove the new line command from the end of the last saved line and add a space to it. This means that lines without blank lines between them will form single paragraphs.
+			if line != "\n":
+				if last_saved_line != "\n":
+					outputContent[len(outputContent)-1] =  outputContent[len(outputContent)-1][:-1]
+					outputContent[len(outputContent)-1] = outputContent[len(outputContent)-1] + " "
 		outputContent.append(line)
+
+# If the last saved line isn't just a new line, remove the new line command at the end.
+last_saved_line = outputContent[len(outputContent)-1]
+if last_saved_line != "\n":
+	outputContent[len(outputContent)-1] =  outputContent[len(outputContent)-1][:-1]
 
 # Write the list to a new file.
 output = open(outputFilename, "w")
