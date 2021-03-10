@@ -1,3 +1,7 @@
+@H This heading should be removed.
+@T This todo should be removed.
+@C This comment should be removed.
+
 @ This line should be removed.
 This line shouldn't be removed. @
 
