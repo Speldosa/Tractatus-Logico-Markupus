@@ -8,6 +8,8 @@ The `@` symbol followed by a letter is used to denote a certain category of info
 
 ```
 @H This is a heading.
+@S This is a summary.
+@N This is a note.
 @T This is a to-do.
 @C This is a comment.
 This is some text that's going to be retained in the final document. It can contain other type of markup code such as, for example, Markdown, LaTeX, or HTML.
