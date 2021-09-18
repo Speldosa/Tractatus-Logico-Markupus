@@ -1,0 +1,77 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - Tractatus
+scope: Tractatus
+
+contexts:
+
+  main:
+    # The main context is the initial starting point of our syntax.
+    # Include other contexts from here (or specify them directly).
+    - include: Tractatus
+    - include: Markdown
+    - include: HTML
+
+  Markdown:
+      - match: '\#'
+        scope: Markdown.Heading
+        push:
+          - meta_scope: Markdown.Heading
+          - match: $\n?
+            pop: true
+
+      - match: '\[\@.*?\]'
+        scope: Markdown.Citation
+
+  HTML:
+      - match: '\<\!\-\-.*?(\-\-\>)'
+        scope: HTML.Comment
+
+      - match: '\<.*?\>'
+        scope: HTML.Tag
+
+      - match: '\$.*?\$'
+        scope: HTML.Math
+
+  Tractatus:
+    - match: '\@H'
+      scope: Tractatus.Heading
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: Tractatus.Heading
+        - match: $\n?
+          pop: true
+
+    - match: '\@S'
+      scope: Tractatus.Summary
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: Tractatus.Summary
+        - match: $\n?
+          pop: true
+
+    - match: '\@C'
+      scope: Tractatus.Comment
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: Tractatus.Comment
+        - match: $\n?
+          pop: true
+
+    - match: '\@N'
+      scope: Tractatus.Note
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: Tractatus.Note
+        - match: $\n?
+          pop: true
+
+    - match: '\@T'
+      scope: Tractatus.Todo
+      push:
+        # This is an anonymous context push for brevity.
+        - meta_scope: Tractatus.Todo
+        - match: $\n?
+          pop: true

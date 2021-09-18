@@ -1,0 +1,58 @@
+{
+    "name": "Tractatus Color Scheme",
+    "globals":
+    {
+        "background": "rgb(20, 20, 20)",
+        "foreground": "white",
+        "caret": "white"
+    },
+    "variables":
+    {
+        "black": "#111",
+        "white": "rgb(242, 242, 242)"
+    },
+    "rules":
+    [
+        {
+            "scope": "Tractatus.Heading",
+            "foreground": "#FF8484",
+        },
+        {
+            "scope": "Tractatus.Summary",
+            "foreground": "#F2D492"
+        },
+        {
+            "scope": "Tractatus.Comment",
+            "foreground": "#A1FCDF"
+        },
+        {
+            "scope": "Tractatus.Note",
+            "foreground": "#00C7FF"
+        },
+        {
+            "scope": "Tractatus.Todo",
+            "foreground": "yellow",
+        },
+        {
+            "scope": "Markdown.Heading",
+            "foreground": "#F74C40",
+            "font_style": "bold"
+        },
+        {
+            "scope": "Markdown.Citation",
+            "foreground": "Gray",
+        },
+        {
+            "scope": "HTML.Comment",
+            "foreground": "gray",
+        },
+        {
+            "scope": "HTML.Tag",
+            "foreground": "orange",
+        },
+        {
+            "scope": "HTML.Math",
+            "foreground": "yellow",
+        }
+    ]
+}
