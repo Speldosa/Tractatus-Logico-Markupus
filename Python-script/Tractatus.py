@@ -10,7 +10,7 @@ def printHelpMessage(error):
 
 # Check if enough arguments have been given.
 if len(sys.argv) < 2:
-	printHelpMessage("To few arguments given.")
+	printHelpMessage("Too few arguments given.")
 
 # Check if the input file exists.
 if not (os.path.isfile(sys.argv[1]) and os.access(sys.argv[1], os.R_OK)):
